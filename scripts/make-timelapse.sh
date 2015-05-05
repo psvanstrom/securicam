@@ -6,13 +6,13 @@
 # creates timelapse movies for archival from a selected
 # set of snapshot images uploaded from  a security camera.
 #
-# images are expected to be found under <WORK_DIR>/cams/<CAMERA>
-# generated timelapse movies will end up in <WORK_DIR>/videos/<CAMERA>
+# images are expected to be found under <PROJ_DIR>/cams/<CAMERA>
+# generated timelapse movies will end up in <PROJ_DIR>/videos/<CAMERA>
 #######################################################################
 
 IMAGE_RATE=10
-WORK_DIR="/opt/securicam"
-LOG_DIR=$WORK_DIR/logs
+PROJ_DIR=$(dirname $(dirname $0))
+LOG_DIR=$PROJ_DIR/logs
 mkdir -p $LOG_DIR
 
 
@@ -36,8 +36,8 @@ if [ $# -lt 1 ]; then
 fi
 
 CAMERA=$1
-IMAGES_DIR=$WORK_DIR/cams/$CAMERA
-VIDEO_DIR=$WORK_DIR/videos/$CAMERA
+IMAGES_DIR=$PROJ_DIR/cams/$CAMERA
+VIDEO_DIR=$PROJ_DIR/videos/$CAMERA
 TEMP_DIR=/tmp/$CAMERA
 
 if [ ! -d $IMAGES_DIR ]; then
