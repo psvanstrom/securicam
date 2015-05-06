@@ -78,5 +78,8 @@ cp $TEMP_DIR/0001.jpg $VIDEO_DIR/$CAMERA-$GENERATE_DATE.jpg
 # remove images
 find $IMAGES_DIR -maxdepth 1 -name "$IMAGES_WILDCARD" -print0 | xargs -0 rm
 
+# set permissions
+chmod 644 $VIDEO_DIR/$CAMERA-$GENERATE_DATE.*
+
 # clean up temp dir
 rm -Rf $TEMP_DIR
