@@ -11,7 +11,7 @@ CAMERA=$1
 
 if [ -z "$2" ] 
 then
-  DAYS_OLD=5
+  DAYS_OLD=7
 else
   DAYS_OLD=$2
 fi

@@ -1,0 +1,2 @@
+sudo convert -background '#0008' -gravity center -fill white -size 640x15 caption:"patio | 2015-05-15 11:23.22" "patio-2015051310141101.jpg" +swap -gravity north -composite "with-caption-latest.jpeg"
+
